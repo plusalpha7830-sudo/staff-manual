@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>サポートマニュアル ＋α</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'M PLUS Rounded 1c',sans-serif;background:linear-gradient(160deg,#fff0f5 0%,#ffe4ef 100%);min-height:100vh}
+.page{display:none;max-width:400px;margin:0 auto;min-height:100vh;padding-bottom:2rem}
+.page.active{display:block}
+
+/* ヘッダー共通 */
+.ph{background:linear-gradient(135deg,#f472b6 0%,#ec4899 60%,#db2777 100%);padding:1rem 1.2rem 1.4rem;border-radius:0 0 2rem 2rem;box-shadow:0 4px 20px #f472b640;display:flex;align-items:center;gap:10px}
+.bk{background:rgba(255,255,255,.25);border:none;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:white;font-size:18px;flex-shrink:0}
+.ph h2{color:white;font-size:17px;font-weight:800;margin:0}
+.ph p{color:#fce7f3;font-size:11px;margin:0}
+
+/* セクションラベル */
+.sl{font-size:12px;font-weight:700;color:#be185d;letter-spacing:.08em;padding:1.2rem 1.2rem .5rem}
+
+/* カード共通 */
+.cd{margin:0 1rem;background:white;border-radius:18px;border:1.5px solid #fce7f3;overflow:hidden;box-shadow:0 2px 10px #f472b618}
+.cd+.cd{margin-top:.8rem}
+
+/* カードヘッド */
+.ch{background:#fdf2f8;padding:.6rem 1rem;display:flex;align-items:center;gap:8px;border-bottom:1.5px solid #fce7f3}
+.ch span{font-size:13px;font-weight:800;color:#be185d}
+.ch.navy{background:#1e3a5f}.ch.navy span{color:white}
+.ch.green{background:#166534}.ch.green span{color:white}
+.ch.teal{background:linear-gradient(135deg,#0d9488,#0f766e)}.ch.teal span{color:white}
+.ch.warn{background:#fff7ed;border-bottom:1.5px solid #fed7aa}.ch.warn span{color:#c2410c}
+.ch.pink-grad{background:linear-gradient(135deg,#f472b6,#db2777)}.ch.pink-grad span{color:white}
+.ch.red{background:#dc2626}.ch.red span{color:white}
+
+/* リストアイテム */
+.li{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1rem;border-bottom:1px solid #fdf2f8;cursor:pointer;transition:background .12s;text-decoration:none}
+.li:last-child{border-bottom:none}
+.li:hover{background:#fff7fb}
+.li:active{background:#fff0f5}
+.lil{display:flex;align-items:center;gap:12px}
+.icon{width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.ititle{font-size:13px;font-weight:700;color:#1f2937}
+.isub{font-size:11px;color:#9ca3af;margin-top:2px}
+.iarrow{color:#f9a8d4;font-size:16px}
+
+/* バッジ */
+.badge{font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px;margin-left:6px;display:inline-block}
+.b-blue{background:#eff6ff;color:#1d4ed8}
+.b-red{background:#fee2e2;color:#dc2626}
+.b-orange{background:#fff7ed;color:#c2410c}
+.b-gray{background:#f3f4f6;color:#374151}
+.b-pink{background:#fce7f3;color:#be185d}
+.b-imp{background:linear-gradient(135deg,#f472b6,#db2777);color:white}
+.b-lnk{background:#dbeafe;color:#1d4ed8}
+
+/* テーブル */
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:#fdf2f8;color:#be185d;font-weight:800;padding:.5rem .7rem;text-align:left;border-bottom:1.5px solid #fce7f3}
+td{padding:.5rem .7rem;border-bottom:1px solid #fdf2f8;color:#374151;vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr:nth-child(even) td{background:#fffbfe}
+
+/* 外部リンクボタン */
+.ext-btn{display:flex;align-items:center;justify-content:center;gap:6px;padding:.7rem 1rem;background:linear-gradient(135deg,#f472b6,#db2777);color:white;border-radius:12px;font-size:13px;font-weight:700;text-decoration:none;margin:.5rem 1rem;box-shadow:0 3px 12px #f472b640;transition:opacity .15s}
+.ext-btn:hover{opacity:.85}
+.ext-btn.secondary{background:linear-gradient(135deg,#3b82f6,#1d4ed8);box-shadow:0 3px 12px #3b82f640}
+.ext-btn.green{background:linear-gradient(135deg,#22c55e,#16a34a);box-shadow:0 3px 12px #22c55e40}
+
+/* 危険バナー */
+.danger{margin:0 1rem;background:linear-gradient(135deg,#dc2626,#991b1b);border-radius:18px;padding:1rem 1.2rem;color:white;box-shadow:0 4px 16px #dc262640}
+.danger h3{font-size:14px;font-weight:800;margin-bottom:.3rem}
+.danger p{font-size:12px;opacity:.9}
+
+/* 注意ボックス */
+.warn-box{margin:.5rem 1rem;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:14px;padding:.8rem 1rem}
+.warn-box p{font-size:12px;color:#92400e}
+
+/* NG機種バナー */
+.ng-banner{margin:0 1rem;background:linear-gradient(135deg,#dc2626,#991b1b);border-radius:18px;padding:1rem 1.2rem;display:flex;align-items:center;justify-content:space-between;cursor:pointer;box-shadow:0 4px 16px #dc262640;text-decoration:none}
+.ng-left{display:flex;align-items:center;gap:10px}
+.ng-icon{background:rgba(255,255,255,.2);width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.ng-title{color:white;font-size:14px;font-weight:800;margin:0}
+.ng-sub{color:#fca5a5;font-size:11px;margin:0}
+
+/* QRボタン */
+.qr-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;padding:.8rem 1rem}
+.qr-btn{background:#fdf2f8;border:1.5px solid #fce7f3;border-radius:14px;padding:.7rem;text-align:center;cursor:pointer;font-size:12px;font-weight:700;color:#be185d;transition:background .12s}
+.qr-btn:active{background:#fce7f3}
+
+/* トップページ専用 */
+.top-header{background:linear-gradient(135deg,#f472b6 0%,#ec4899 50%,#db2777 100%);padding:1.5rem 1.2rem 2rem;border-radius:0 0 2.5rem 2.5rem;box-shadow:0 6px 24px #f472b650}
+.top-logo{width:60px;height:60px;background:rgba(255,255,255,.25);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:.8rem}
+.top-title{color:white;font-size:20px;font-weight:800;margin-bottom:.2rem}
+.top-sub{color:#fce7f3;font-size:12px}
+.menu-grid{display:grid;grid-template-columns:1fr;gap:.7rem;padding:.5rem 1rem 1rem}
+.menu-card{background:white;border-radius:18px;border:1.5px solid #fce7f3;display:flex;align-items:center;gap:12px;padding:1rem;cursor:pointer;transition:all .15s;box-shadow:0 2px 10px #f472b618}
+.menu-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px #f472b630}
+.menu-card:active{transform:scale(.98)}
+.menu-card.highlight{border-color:#86efac;background:#f0fdf4}
+.card-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.card-body{flex:1}
+.card-title{font-size:14px;font-weight:800;color:#1f2937}
+.card-desc{font-size:11px;color:#9ca3af;margin-top:2px}
+.card-arrow{color:#f9a8d4;font-size:18px;margin-left:auto}
+.bg-pink{background:#fce7f3}
+.bg-rose{background:#fff1f2}
+.bg-purple{background:#faf5ff}
+.bg-amber{background:#fff7ed}
+.bg-green{background:#f0fdf4}
+.bg-blue{background:#eff6ff}
+.bg-teal{background:#f0fdfa}
+.divider{height:1px;background:#fce7f3;margin:.2rem 0}
+.shift-link{margin:0 1rem;background:linear-gradient(135deg,#8b5cf6,#7c3aed);border-radius:18px;padding:1rem 1.2rem;display:flex;align-items:center;justify-content:space-between;cursor:pointer;box-shadow:0 4px 16px #8b5cf640;text-decoration:none}
+.shift-left{display:flex;align-items:center;gap:10px}
+.shift-icon{background:rgba(255,255,255,.2);width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.shift-title{color:white;font-size:14px;font-weight:800}
+.shift-sub{color:#ddd6fe;font-size:11px}
+
+/* アコーディオン */
+.acc-head{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1rem;cursor:pointer;user-select:none}
+.acc-head span{font-size:13px;font-weight:700;color:#1f2937}
+.acc-body{display:none;border-top:1px solid #fdf2f8}
+.acc-body.open{display:block}
+.acc-arrow{transition:transform .2s;color:#f9a8d4;font-size:16px}
+.acc-arrow.open{transform:rotate(180deg)}
+
+/* コラップスセクション */
+.collapse-btn{width:100%;text-align:left;background:#fdf2f8;border:none;border-top:1px solid #fce7f3;padding:.7rem 1rem;font-family:'M PLUS Rounded 1c',sans-serif;font-size:12px;font-weight:700;color:#be185d;cursor:pointer;display:flex;align-items:center;justify-content:space-between}
+
+/* オンボーディング */
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:.8rem 1rem;border-bottom:1px solid #fdf2f8}
+.check-item:last-child{border-bottom:none}
+.checkbox{width:22px;height:22px;border:2px solid #f9a8d4;border-radius:6px;flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;background:white;transition:all .15s}
+.checkbox.checked{background:linear-gradient(135deg,#f472b6,#db2777);border-color:#db2777}
+.check-text{font-size:13px;color:#374151;font-weight:700;padding-top:1px}
+.check-sub{font-size:11px;color:#9ca3af;margin-top:2px}
+
+/* 緊急時 */
+.step-card{margin:.5rem 1rem;background:white;border-radius:16px;border:1.5px solid #fce7f3;overflow:hidden}
+.step-head{background:linear-gradient(135deg,#f59e0b,#d97706);padding:.6rem 1rem;display:flex;align-items:center;gap:8px}
+.step-num{background:rgba(255,255,255,.3);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:white}
+.step-head span{color:white;font-size:13px;font-weight:800}
+.step-body{padding:.8rem 1rem}
+.step-body p{font-size:12px;color:#374151;line-height:1.6}
+
+/* オプション一覧 */
+.opt-table{width:100%;border-collapse:collapse;font-size:11.5px}
+.opt-table th{background:#fdf2f8;color:#be185d;font-weight:800;padding:.45rem .6rem;text-align:left;border-bottom:1.5px solid #fce7f3}
+.opt-table td{padding:.45rem .6rem;border-bottom:1px solid #fdf2f8;color:#374151}
+.opt-table tr:last-child td{border-bottom:none}
+.opt-table tr:nth-child(even) td{background:#fffbfe}
+.price{font-weight:700;color:#be185d}
+
+/* アコーディオン媒体一覧 */
+.media-item{display:flex;align-items:center;gap:10px;padding:.8rem 1rem;border-bottom:1px solid #fdf2f8;cursor:pointer;transition:background .12s}
+.media-item:last-child{border-bottom:none}
+.media-item:active{background:#fff0f5}
+.media-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+
+</style>
+</head>
+<body>
+
+<!-- ========== トップページ ========== -->
+<div id="page-top" class="page active">
+  <div class="top-header">
+    <div class="top-logo">🏠</div>
+    <div class="top-title">サポートマニュアル</div>
+    <div class="top-sub">町のエアコンお掃除専門店＋α</div>
+  </div>
+
+  <div class="sl">シフト提出</div>
+  <a class="shift-link" href="https://docs.google.com/spreadsheets/d/1iCBWPEquv2j7rnqckVAEX5UoubKnz_PGJUXT3GKoA6Y/edit" target="_blank">
+    <div class="shift-left">
+      <div class="shift-icon">📅</div>
+      <div>
+        <div class="shift-title">シフト提出</div>
+        <div class="shift-sub">毎月8日まで</div>
+      </div>
+    </div>
+    <i class="ti ti-external-link" style="color:white;font-size:18px"></i>
+  </a>
+
+  <div class="sl">自社決済用QR</div>
+  <div class="cd">
+    <div class="qr-grid">
+      <button class="qr-btn" onclick="openLink('https://drive.google.com/uc?export=view&id=1-p7sc1B36_3FsvxO2C96Y7fyG4idLv-X')">📱 PayPay<br><span style="font-size:10px;font-weight:400">＋α専用</span></button>
+      <button class="qr-btn" onclick="openLink('https://drive.google.com/uc?export=view&id=1mvkysdnbzrsBy8iQiyZajS0K-DZO0uyc')">💳 クレカ決済<br><span style="font-size:10px;font-weight:400">＋α専用</span></button>
+    </div>
+  </div>
+
+  <div class="sl">メインメニュー</div>
+  <div class="menu-grid">
+    <div class="menu-card" onclick="go('page-anken')">
+      <div class="card-icon bg-pink">📋</div>
+      <div class="card-body">
+        <p class="card-title">案件まとめ</p>
+        <p class="card-desc">金額表・支払い方法・媒体ごとの対応</p>
+      </div>
+      <i class="ti ti-chevron-right card-arrow"></i>
+    </div>
+    <div class="menu-card highlight" onclick="openLink('https://plusalpha7830-sudo.github.io/ac-calculator-plus-alpha/')">
+      <div class="card-icon bg-green">🧮</div>
+      <div class="card-body">
+        <p class="card-title">料金計算ツール<span class="badge b-lnk">外部リンク</span></p>
+        <p class="card-desc">現場での料金計算はこちら</p>
+      </div>
+      <i class="ti ti-external-link card-arrow" style="color:#86efac"></i>
+    </div>
+    <div class="menu-card" onclick="go('page-kishu')">
+      <div class="card-icon bg-rose">🔧</div>
+      <div class="card-body">
+        <p class="card-title">機種ごとの対応方法</p>
+        <p class="card-desc">パーツ取付け・機種別トラブル対応</p>
+      </div>
+      <i class="ti ti-chevron-right card-arrow"></i>
+    </div>
+    <div class="menu-card" onclick="go('page-option')">
+      <div class="card-icon bg-purple">✨</div>
+      <div class="card-body">
+        <p class="card-title">オプション一覧</p>
+        <p class="card-desc">エアコン系以外のアップセル</p>
+      </div>
+      <i class="ti ti-chevron-right card-arrow"></i>
+    </div>
+    <div class="divider"></div>
+    <div class="menu-card" onclick="go('page-emergency')">
+      <div class="card-icon bg-amber">⚠️</div>
+      <div class="card-body">
+        <p class="card-title">緊急時対応マニュアル<span class="badge b-imp">重要</span></p>
+        <p class="card-desc">地震・事故など作業中トラブル</p>
+      </div>
+      <i class="ti ti-chevron-right card-arrow"></i>
+    </div>
+    <div class="divider"></div>
+    <div class="menu-card" onclick="go('page-newstaff')" style="border-color:#a5f3fc;background:#f0fdff">
+      <div class="card-icon" style="background:#cffafe">🌱</div>
+      <div class="card-body">
+        <p class="card-title">新人スタッフガイド<span class="badge b-blue">入門</span></p>
+        <p class="card-desc">はじめにやること チェックリスト</p>
+      </div>
+      <i class="ti ti-chevron-right card-arrow" style="color:#67e8f9"></i>
+    </div>
+  </div>
+
+  <div class="sl">＋α 予約媒体一覧</div>
+  <div class="cd">
+    <div class="acc-head" onclick="toggleAcc(this)">
+      <span>📋 媒体リストを表示する</span>
+      <i class="ti ti-chevron-down acc-arrow"></i>
+    </div>
+    <div class="acc-body">
+    <a class="li" href="https://curama.jp/aircon/wall/SER506564991/" target="_blank">
+      <div class="lil"><div class="icon bg-green">🌿</div><div><div class="ititle">くらしのマーケット</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </a>
+    <a class="li" href="https://yourmystar.jp/c0_1/c1_2/c2_23/d_73214/" target="_blank">
+      <div class="lil"><div class="icon bg-blue">⭐</div><div><div class="ititle">ユアマイスター ＋α本店</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </a>
+    <a class="li" href="https://yourmystar.jp/c0_1/c1_2/c2_23/d_76400/" target="_blank">
+      <div class="lil"><div class="icon bg-blue">⭐</div><div><div class="ititle">ユアマイスター バイキング</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </a>
+    <a class="li" href="https://yourmystar.jp/c0_1/c1_2/c2_23/d_76568/" target="_blank">
+      <div class="lil"><div class="icon bg-blue">⭐</div><div><div class="ititle">ユアマイスター 魂</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </a>
+    <a class="li" href="https://yourmystar.jp/c0_1/c1_2/c2_23/d_76666/" target="_blank">
+      <div class="lil"><div class="icon bg-blue">⭐</div><div><div class="ititle">ユアマイスター パステル</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </a>
+    <a class="li" href="https://yourmystar.jp/c0_1/c1_2/c2_23/d_78324/?partner=cleaclean" target="_blank">
+      <div class="lil"><div class="icon bg-blue">⭐</div><div><div class="ititle">ユアマイスター クレアクリーン</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </a>
+    <a class="li" href="https://meetsmore.com/p/ZyKajTMsuQf389My/air-conditioner-cleaning" target="_blank">
+      <div class="lil"><div class="icon bg-teal">💼</div><div><div class="ititle">ミツモア</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </a>
+    <a class="li" href="https://jmty.jp/kanagawa/ser-hcl/article-1ipb0l" target="_blank">
+      <div class="lil"><div class="icon bg-amber">📍</div><div><div class="ititle">ジモティ エアコン</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </a>
+    <a class="li" href="https://jmty.jp/kanagawa/ser-hcl/article-1is9x3" target="_blank">
+      <div class="lil"><div class="icon bg-amber">📍</div><div><div class="ititle">ジモティ レンジフード</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </a>
+    <a class="li" href="https://jmty.jp/kanagawa/ser-hcl/article-1is9xd" target="_blank">
+      <div class="lil"><div class="icon bg-amber">📍</div><div><div class="ititle">ジモティ 浴室クリーニング</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </a>
+    <a class="li" href="https://plus-alpha.org" target="_blank">
+      <div class="lil"><div class="icon bg-pink">🏠</div><div><div class="ititle">ホームページ（LINE予約）</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </a>
+    <a class="li" href="https://plus-alpha2.hp.peraichi.com" target="_blank">
+      <div class="lil"><div class="icon bg-rose">📄</div><div><div class="ititle">ペライチ</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </a>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 新人スタッフガイド ========== -->
+<div id="page-newstaff" class="page">
+  <div class="ph">
+    <button class="bk" onclick="go('page-top')"><i class="ti ti-arrow-left"></i></button>
+    <div><h2>新人スタッフガイド</h2><p>はじめにやること チェックリスト</p></div>
+  </div>
+
+  <div class="sl">✅ はじめにやること</div>
+  <div class="cd">
+    <div class="check-item">
+      <div class="checkbox" onclick="toggleCheck(this)"></div>
+      <div>
+        <div class="check-text">📱 LINEグループに参加する</div>
+        <div class="check-sub"><a href="https://lin.ee/NlQt0Tg" target="_blank" style="color:#be185d;font-weight:700">＋α総合管理デスク（LINE）に参加</a></div>
+      </div>
+    </div>
+    <div class="check-item">
+      <div class="checkbox" onclick="toggleCheck(this)"></div>
+      <div>
+        <div class="check-text">📋 シフト提出方法を確認する</div>
+        <div class="check-sub"><a href="https://docs.google.com/spreadsheets/d/1iCBWPEquv2j7rnqckVAEX5UoubKnz_PGJUXT3GKoA6Y/edit" target="_blank" style="color:#be185d;font-weight:700">シフト提出シートを開く</a>（毎月8日まで）</div>
+      </div>
+    </div>
+    <div class="check-item">
+      <div class="checkbox" onclick="toggleCheck(this)"></div>
+      <div>
+        <div class="check-text">🧮 料金計算ツールをお気に入りに追加</div>
+        <div class="check-sub">現場で使えるようにしておく</div>
+      </div>
+    </div>
+    <div class="check-item">
+      <div class="checkbox" onclick="toggleCheck(this)"></div>
+      <div>
+        <div class="check-text">📖 案件まとめページを一通り読む</div>
+        <div class="check-sub">全媒体の支払い方法を把握する</div>
+      </div>
+    </div>
+    <div class="check-item">
+      <div class="checkbox" onclick="toggleCheck(this)"></div>
+      <div>
+        <div class="check-text">⚠️ 緊急時対応マニュアルを読む</div>
+        <div class="check-sub">地震・トラブル時の対応を確認</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl">🧰 道具一覧</div>
+  <div class="cd">
+    <a class="li" href="https://drive.google.com/drive/folders/1QMIH0FswmVK4lFTJjKQmEqCFyNb7xEXl" target="_blank">
+      <div class="lil"><div class="icon bg-amber">🔨</div><div><div class="ititle">現場研修までに必要な道具一覧</div><div class="isub">Google Driveで確認</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </a>
+    <a class="li" href="https://drive.google.com/drive/folders/1F6hDZchtxdd8tRyqTQmzdP6zWlmY28i6" target="_blank">
+      <div class="lil"><div class="icon bg-purple">🛠️</div><div><div class="ititle">独り立ちに必要な道具一覧</div><div class="isub">Google Driveで確認</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </a>
+  </div>
+
+  <div class="sl">よく使うリンク</div>
+  <div class="cd">
+    <div class="li" onclick="go('page-anken')">
+      <div class="lil"><div class="icon bg-pink">📋</div><div><div class="ititle">案件まとめ</div><div class="isub">全媒体の支払い方法</div></div></div>
+      <i class="ti ti-chevron-right iarrow"></i>
+    </div>
+    <div class="li" onclick="openLink('https://plusalpha7830-sudo.github.io/ac-calculator-plus-alpha/')">
+      <div class="lil"><div class="icon bg-green">🧮</div><div><div class="ititle">料金計算ツール</div><div class="isub">現場で使う料金計算</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </div>
+    <div class="li" onclick="go('page-emergency')">
+      <div class="lil"><div class="icon bg-amber">⚠️</div><div><div class="ititle">緊急時対応マニュアル</div><div class="isub">地震・事故など</div></div></div>
+      <i class="ti ti-chevron-right iarrow"></i>
+    </div>
+  </div>
+
+  <div class="sl">📞 事前連絡について</div>
+  <div class="cd">
+    <div style="padding:.8rem 1rem;background:#fff7ed;border-radius:0">
+      <p style="font-size:12px;color:#92400e;font-weight:700">事務員さんから2日前ほどに案件が共有されます。<br>前日のお昼にお客様へ電話してください。</p>
+    </div>
+    <div class="ch warn"><span>📞 電話する理由</span></div>
+    <div style="padding:.7rem 1rem">
+      <p style="font-size:12px;color:#374151;line-height:1.8">・住所入力ミスや電話番号ミスの確認<br>（マンション名・部屋番号が抜けていることがある）<br>・電話番号違いの場合→事務員さんにメンションしてメールで正しい番号を聞いてもらう</p>
+    </div>
+    <div class="ch navy"><span>📋 電話の流れ</span></div>
+    <div style="padding:.7rem 1rem">
+      <p style="font-size:12px;color:#374151;line-height:2">
+        ① <strong>住所確認</strong><br>
+        ② <strong>駐車場の確認</strong><br>
+        　有 → どちらに停めるか聞く<br>
+        　無 → 「コインパーキングに停めさせていただきます。お客様ご負担になります」と伝える<br>
+        ③ <strong>到着予定時間の確認</strong><br>
+        　①8〜9時枠：そのまま伝える<br>
+        　②③それ以外：「前の方の施工が終わり次第ご連絡します」と伝える<br>
+        ④ <strong>必ず担当者名を名乗る</strong>
+      </p>
+    </div>
+    <div class="ch warn"><span>📱 電話に出なかった場合 → すぐにショートメール</span></div>
+    <div style="padding:.7rem 1rem;background:#f9fafb;font-size:12px;color:#374151;line-height:1.9">
+      「明日お世話になりますエアコンクリーニングの◯◯と申します。明日は宜しくお願い致します。明日は◯時に到着予定となりますので宜しくお願い致します」<br><br>
+      ②③の場合：<br>
+      「〇〇時〜となっておりますが前の方の施工が終わり次第ご連絡させていただきます」
+    </div>
+    <div style="padding:.6rem 1rem;background:#fff0f5">
+      <p style="font-size:11px;color:#be185d;font-weight:700">⚠️ すぐに送らないと折り返し電話がかかってきて作業中に対応することになります！</p>
+    </div>
+  </div>
+
+  <div class="sl">🔧 作業フロー</div>
+  <div class="cd">
+    <div class="ch pink-grad"><span>🏠 到着〜準備</span></div>
+    <div style="padding:.7rem 1rem">
+      <p style="font-size:12px;color:#374151;line-height:2">
+        ① 挨拶・名刺を渡す<br>
+        ② 入口・コインパーキング・案件スクショ写真を撮る（入る前にビフォーアフターに載せる）<br>
+        ③ 道具を綺麗に玄関に並べる<br>
+        ④ エアコンへ案内→動作確認（室外機オプション時は室外機も確認）<br>
+        ⑤ クレーム対策トーク（コンセント・お風呂・トイレ使用の許可を取る）<br>
+        ⑥ ユアマの場合：「最後に5分間携帯で作業終了報告をしていただく作業がございます」と必ず話す
+      </p>
+    </div>
+    <div class="ch pink-grad"><span>🧹 エアコン洗浄</span></div>
+    <div style="padding:.7rem 1rem">
+      <p style="font-size:12px;color:#374151;line-height:2">
+        ① ブルーシートをエアコン下・周りに敷く<br>
+        ② バケツに水を9割入れる<br>
+        ③ 水入れ中に→お風呂場にブルーシート・筆などの用意<br>
+        ④ エアコンのパーツを外す<br>
+        ⑤ エアコン内部の動画を撮る<br>
+        ⑥ 養生する<br>
+        ⑦ エコ洗剤をドレインパン・シロッコファンにかけておく
+      </p>
+    </div>
+    <div class="ch pink-grad"><span>🛁 パーツ洗い（お風呂場）</span></div>
+    <div style="padding:.7rem 1rem">
+      <p style="font-size:12px;color:#374151;line-height:2">
+        ① 排水口・換気扇を外す<br>
+        ② 洗う前にノンフラッシュで写真撮影<br>
+        ③ 換気扇：洗って写真撮ったらすぐ拭いて取り付ける<br>
+        ④ 排水口：端に外したままにしておく<br>
+        　→ つけたままだとホコリ・カビが詰まるため<br>
+        ⑤ パーツ1つ1つをノンフラッシュで写真撮影（汚れ・カビのひどい箇所を重点的に）<br>
+        ⑥ ケミクールでパーツを洗う<br>
+        ⑦ 洗い流す<br>
+        ⑧ 濡れたままフラッシュで写真撮影<br>
+        ⑨ パーツを拭いてブルーシートの上に置く<br>
+        ⑩ 1台の場合：シャワーでお風呂場全体を洗い流す → 排水口をつけて終了<br>
+        ⑪ 複数台の場合：道具を揃えて次のパーツ洗いへ。風呂場の電気はしっかり消す
+      </p>
+    </div>
+    <div class="ch pink-grad"><span>💧 高圧洗浄〜仕上げ</span></div>
+    <div style="padding:.7rem 1rem">
+      <p style="font-size:12px;color:#374151;line-height:2">
+        ① 高圧洗浄をかける<br>
+        ② こすり<br>
+        ③ 高圧<br>
+        ④ 飛ばし<br>
+        ⑤ 拭き上げ<br>
+        ⑥ アフター動画撮影 + 汚水の写真<br>
+        ⑦ ホース（アップセル）成功→吸引ポンプで引いてから余った水でホース洗浄
+      </p>
+    </div>
+    <div class="ch pink-grad"><span>🎬 ビフォーアフター〜退場</span></div>
+    <div style="padding:.7rem 1rem">
+      <p style="font-size:12px;color:#374151;line-height:2">
+        ① 片付け → ブルーシートに置く<br>
+        ② トイレを借りて掃除<br>
+        ③ 動画編集（シロッコファン・パーツ・排水口・換気扇・トイレ）<br>
+        ④ ビフォーアフター動画をお客様に見せる<br>
+        ⑤ ユアマ：金額確定メールの口コミを書いてもらう（星5でお願いする）<br>
+        ⑥ Google口コミ（各店舗）のコピペ依頼<br>
+        ⑦ 保証の話・各店舗LINEのQR読み取り・メルマガ登録<br>
+        　→ メルマガはお客様の携帯でアドレス入力→すぐにスクショ<br>
+        ⑧ 品質チェック<br>
+        ⑨ 挨拶・退場<br>
+        ⑩ 車に戻ったら：スクショしたメルマガ・口コミをビフォーアフターの最後に貼り付け<br>
+        ⑪ フォーマット → スプレッドシート入力
+      </p>
+    </div>
+  </div>
+
+  <div class="sl">📸 写真・動画の順番</div>
+  <div class="cd">
+    <div style="padding:.7rem 1rem">
+      <p style="font-size:12px;color:#374151;line-height:2.2">
+        1️⃣ 家の写真（コインパーキング）<br>
+        2️⃣ 案件先の情報<br>
+        3️⃣ エアコンの場所（例：2階寝室）<br>
+        4️⃣ エアコン ビフォーアフター<br>
+        5️⃣ フィルター<br>
+        6️⃣ パーツ<br>
+        7️⃣ 室外機（オプションがある場合）<br>
+        8️⃣ ホース<br>
+        9️⃣ 汚水<br>
+        🔟 排水口<br>
+        　　換気扇<br>
+        　　トイレ<br>
+        　　（玄関から出たら）メルマガ・口コミ
+      </p>
+    </div>
+    <div style="padding:.6rem 1rem;background:#fff0f5;border-top:1px solid #fce7f3">
+      <p style="font-size:12px;color:#be185d;font-weight:700">⚠️ 換気扇なし・外でパーツ洗い・排水口が鉄の場合は最初にLINEする</p>
+      <p style="font-size:11px;color:#9ca3af;margin-top:.3rem">案件情報の後に「換気扇ありません」「排水口が鉄です」「トイレ使用不可」「お風呂場使用不可」などすぐに入れる</p>
+    </div>
+  </div>
+
+  <div class="sl">🆘 機種別クレーム対策トーク</div>
+  <div class="cd">
+    <div class="ch warn"><span>【日立 しろくまくん】</span></div>
+    <div style="padding:.8rem 1rem;background:#f9fafb;font-size:12px;color:#374151;line-height:1.8">
+      「しろくまくんは、名前のとおりシロッコファンが白いので、汚れが染み付いてしまって洗浄しても染みになってまだらになってしまいますのでご了承ください。染みは残ってしまっても、カビは全て取れているのでご安心ください。」
+    </div>
+  </div>
+</div>
+
+<!-- ========== 案件まとめページ ========== -->
+<div id="page-anken" class="page">
+  <div class="ph">
+    <button class="bk" onclick="go('page-top')"><i class="ti ti-arrow-left"></i></button>
+    <div><h2>案件まとめ</h2><p>媒体別の対応・支払い方法</p></div>
+  </div>
+
+  <div class="sl">媒体一覧</div>
+  <div class="cd">
+    <div class="li" onclick="go('page-kurashi')">
+      <div class="lil"><div class="icon bg-green">🌿</div><div><div class="ititle">くらしのマーケット</div><div class="isub">サイト決済・駐車代郵送</div></div></div>
+      <i class="ti ti-chevron-right iarrow"></i>
+    </div>
+    <div class="li" onclick="go('page-yourmyster')">
+      <div class="lil"><div class="icon bg-blue">⭐</div><div><div class="ititle">ユアマイスター</div><div class="isub">サイト決済・領収書不要</div></div></div>
+      <i class="ti ti-chevron-right iarrow"></i>
+    </div>
+    <div class="li" onclick="go('page-mitsumoa')">
+      <div class="lil"><div class="icon bg-teal">💼</div><div><div class="ititle">ミツモア</div><div class="isub">サイト決済</div></div></div>
+      <i class="ti ti-chevron-right iarrow"></i>
+    </div>
+    <div class="li" onclick="go('page-ouchini')">
+      <div class="lil"><div class="icon bg-rose">🏡</div><div><div class="ititle">おうちにプロ</div><div class="isub">現地現金回収のみ<span class="badge b-red">重要</span></div></div></div>
+      <i class="ti ti-chevron-right iarrow"></i>
+    </div>
+    <div class="li" onclick="go('page-airpika')">
+      <div class="lil"><div class="icon bg-pink">💨</div><div><div class="ititle">エアピカ</div><div class="isub">サイト決済</div></div></div>
+      <i class="ti ti-chevron-right iarrow"></i>
+    </div>
+    <div class="li" onclick="go('page-jisha')">
+      <div class="lil"><div class="icon bg-purple">🏠</div><div><div class="ititle">自社案件</div><div class="isub">現地現金回収</div></div></div>
+      <i class="ti ti-chevron-right iarrow"></i>
+    </div>
+    <div class="li" onclick="go('page-arigato-hp')">
+      <div class="lil"><div class="icon bg-amber">💛</div><div><div class="ititle">ありがとう案件 HP</div><div class="isub">現地現金回収</div></div></div>
+      <i class="ti ti-chevron-right iarrow"></i>
+    </div>
+    <div class="li" onclick="go('page-arigato-youma')">
+      <div class="lil"><div class="icon bg-green">💚</div><div><div class="ititle">ありがとう案件 ユアマ</div><div class="isub">サイト決済後現金回収</div></div></div>
+      <i class="ti ti-chevron-right iarrow"></i>
+    </div>
+    <div class="li" onclick="openLink('https://as48.notion.site/Q-A-3917c5cf83f240cf9cff7e6b89ac4f63?pvs=74')">
+      <div class="lil"><div class="icon bg-blue">📎</div><div><div class="ititle">他社案件まとめサイト</div><div class="isub">Notionで確認</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ========== くらしのマーケット ========== -->
+<div id="page-kurashi" class="page">
+  <div class="ph">
+    <button class="bk" onclick="go('page-anken')"><i class="ti ti-arrow-left"></i></button>
+    <div><h2>くらしのマーケット</h2><p>支払い・駐車代処理</p></div>
+  </div>
+
+  <div class="sl">支払い方法</div>
+  <div class="cd">
+    <div class="ch navy"><span>💳 基本料金のお支払い</span></div>
+    <table>
+      <tr><td>💳 サイト内（クレジットカード）</td></tr>
+      <tr><td>📆 サイト内（後払い）</td></tr>
+      <tr><td>💴 現金（PayPay OK）</td></tr>
+    </table>
+    <div style="padding:.5rem 1rem">
+      <p style="font-size:11px;color:#9ca3af">追加料金・駐車料金は下記参照</p>
+    </div>
+  </div>
+
+  <div class="sl">💳 サイト内決済の場合（クレカ・後払い）</div>
+  <div class="cd">
+    <div class="ch green"><span>📋 追加料金・駐車料金の処理</span></div>
+    <div style="padding:.8rem 1rem">
+      <p style="font-size:12px;color:#374151;line-height:1.8"><strong>追加料金</strong> → 増額決済<br><strong>駐車料金</strong> → 作業料金に含み増額決済</p>
+      <div class="warn-box" style="margin:.6rem 0">
+        <p>🚗 駐車料金はスタッフが<strong>立替え</strong>。売上登録時に作業料金とは別でスマプラへ入力すること</p>
+      </div>
+    </div>
+    <div class="ch" style="background:#f0fdf4;border-top:1.5px solid #bbf7d0"><span style="color:#166534">📝 確定連絡の例文</span></div>
+    <div style="padding:.8rem 1rem;background:#f9fafb;font-size:12px;color:#374151;line-height:2;border-bottom:1px solid #fdf2f8">
+      佐藤様<br>
+      作業料金10,000円<br>
+      駐車料金1,200円<br><br>
+      11,200円で確定お願いします。
+    </div>
+    <div class="ch" style="background:#eff6ff;border-top:1.5px solid #bfdbfe"><span style="color:#1d4ed8">🖥️ 売上登録の入力方法</span></div>
+    <table>
+      <tr><th>項目</th><th>入力内容</th></tr>
+      <tr><td>作業料金</td><td>10,000円</td></tr>
+      <tr><td>スマプラ</td><td>1,200円</td></tr>
+      <tr><td>備考欄</td><td>駐車場代1,200円</td></tr>
+    </table>
+  </div>
+
+  <div class="sl">💴 現金の場合</div>
+  <div class="cd">
+    <div class="ch navy"><span>現金・PayPay 支払いフロー</span></div>
+    <table>
+      <tr><th>区分</th><th>方法</th></tr>
+      <tr><td>基本料金</td><td>現地で現金 or PayPay 回収</td></tr>
+      <tr><td>追加料金</td><td>現地で現金回収 ＋ 領収書発行</td></tr>
+      <tr><td>駐車料金</td><td>現地で現金回収</td></tr>
+    </table>
+  </div>
+
+  <div class="sl">⚠️ 金額確定後のルール</div>
+  <div class="cd">
+    <div class="ch warn"><span>➕ アップセルがあった場合</span></div>
+    <div style="padding:.8rem 1rem">
+      <p style="font-size:12px;color:#374151;line-height:1.7">決済手段：<strong>現金のみ</strong><br>領収書は必ず発行してください。</p>
+    </div>
+  </div>
+
+  <div class="cd" style="margin-top:.8rem">
+    <div class="ch red"><span>➖ 減額・返金があった場合</span></div>
+    <div style="padding:.8rem 1rem">
+      <p style="font-size:12px;color:#374151;line-height:1.7;margin-bottom:.6rem">その場で<strong>返金証明書</strong>を発行してご返金ください。</p>
+      <a class="ext-btn secondary" href="https://drive.google.com/file/d/1pNOcq37Cg3a-NqrGYWASyEcxmejQaiD9/view" target="_blank" style="margin:0 0 .6rem">
+        <i class="ti ti-file-text"></i> 返金証明書を開く
+      </a>
+      <div class="warn-box" style="margin:.6rem 0 0">
+        <p>⚠️ くらしのマーケット内での返金処理はできません</p>
+      </div>
+    </div>
+    <div class="ch" style="background:#fdf2f8"><span>💰 スタッフ精算ルール（返金額の70%）</span></div>
+    <table>
+      <tr><th>返金額</th><th>スタッフ精算額</th></tr>
+      <tr><td>6,000円</td><td class="price">4,200円</td></tr>
+      <tr><td>12,000円</td><td class="price">8,400円</td></tr>
+    </table>
+    <div style="padding:.6rem 1rem">
+      <p style="font-size:11px;color:#9ca3af">残り30%はくらま手数料・決済手数料等の店舗負担分として処理</p>
+    </div>
+  </div>
+
+  <div class="sl">領収書が必要なお客様へ</div>
+  <div class="cd">
+    <div style="padding:.8rem 1rem">
+      <p style="font-size:12px;color:#374151;line-height:1.7;margin-bottom:.6rem">お客様にフォームを入力してもらい、<strong>その場で受信を確認</strong>してください。<br><span style="color:#dc2626;font-weight:700">後日再発行はできません。</span></p>
+    </div>
+    <a class="ext-btn secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSeUU600q1xPXjamUUc3h0of_kwwysL_ygxaBUFR4t0KGp8DeA/viewform" target="_blank" style="margin:0 1rem .8rem">
+      <i class="ti ti-file-text"></i> 領収書発行フォームを開く
+    </a>
+  </div>
+
+  <div class="sl">⚠️ くらしのマーケット共通ルール</div>
+  <div class="cd">
+    <div class="ch warn"><span>⚠️ 確認後の値上げ</span></div>
+    <div style="padding:.8rem 1rem"><p style="font-size:12px;color:#374151;line-height:1.6">確認後に追加料金が発生した場合は、<strong>必ず現金で回収</strong>し領収書を発行してください。</p></div>
+    <div class="ch warn"><span>⚠️ 値下げ・返金</span></div>
+    <div style="padding:.8rem 1rem"><p style="font-size:12px;color:#374151;line-height:1.6">サイト経由の値下げ処理は行いません。返金が発生した場合は<strong>スタッフ負担</strong>となります。</p></div>
+  </div>
+
+
+</div>
+
+<!-- ========== ユアマイスター ========== -->
+<div id="page-yourmyster" class="page">
+  <div class="ph">
+    <button class="bk" onclick="go('page-anken')"><i class="ti ti-arrow-left"></i></button>
+    <div><h2>ユアマイスター</h2><p>支払い・オプション</p></div>
+  </div>
+
+  <div style="margin:1rem 1rem 0">
+    <div class="danger">
+      <h3>🚨 現金のやり取りは駐車料金のみ</h3>
+      <p>追加料金・アップセル・減額は<strong>すべてサイト内決済</strong>。駐車料金以外で現金を受け取った場合は<strong>退店</strong>となります。</p>
+    </div>
+  </div>
+
+  <div class="sl">支払い方法</div>
+  <div class="cd">
+    <div class="ch navy"><span>💳 支払いフロー</span></div>
+    <table>
+      <tr><th>区分</th><th>方法</th></tr>
+      <tr><td>基本料金</td><td>サイト内決済のみ</td></tr>
+      <tr><td>追加料金・アップセル</td><td>サイト内決済のみ</td></tr>
+      <tr><td>減額・返金</td><td>サイト内決済のみ</td></tr>
+      <tr><td>駐車料金</td><td>現金回収OK（唯一の例外）</td></tr>
+      <tr><td>領収書</td><td>ユアマイスターからメールで届く（現地発行不要）</td></tr>
+    </table>
+  </div>
+
+  <div class="sl">オプション料金</div>
+  <div class="cd">
+    <div class="ch pink-grad"><span>✨ 固定オプション</span></div>
+    <table class="opt-table">
+      <tr><th>オプション</th><th>お客様支払い</th><th>作業料金</th></tr>
+      <tr><td>よくばり3点セット</td><td class="price">8,050円</td><td class="price">7,000円</td></tr>
+      <tr><td>満足2点セット</td><td class="price">5,750円</td><td class="price">5,000円</td></tr>
+      <tr><td>ナノソルコート</td><td class="price">3,450円</td><td class="price">3,000円</td></tr>
+      <tr><td>室外機清掃</td><td class="price">5,750円</td><td class="price">5,000円</td></tr>
+      <tr><td>高所作業費</td><td class="price">3,450円</td><td class="price">3,000円</td></tr>
+      <tr><td>防虫キャップ</td><td class="price">1,150円</td><td class="price">1,000円</td></tr>
+      <tr><td>女性同行</td><td class="price">2,300円</td><td class="price">2,000円</td></tr>
+      <tr><td>ドレンホース</td><td class="price">2,875円</td><td class="price">2,500円</td></tr>
+      <tr><td>浴室クリーニング</td><td class="price">18,400円</td><td class="price">16,000円</td></tr>
+    </table>
+  </div>
+
+  <div class="cd">
+    <div class="ch"><span>💡 電気の傘（簡易清掃）</span></div>
+    <table class="opt-table">
+      <tr><th>数量</th><th>お客様支払い</th></tr>
+      <tr><td>1個</td><td class="price">980円</td></tr>
+      <tr><td>2個</td><td class="price">1,760円</td></tr>
+      <tr><td>3個</td><td class="price">2,340円</td></tr>
+    </table>
+  </div>
+
+  <div class="cd">
+    <div class="ch"><span>🔆 シーリングライト（簡易清掃）</span></div>
+    <table class="opt-table">
+      <tr><th>数量</th><th>お客様支払い</th></tr>
+      <tr><td>1個</td><td class="price">1,980円</td></tr>
+      <tr><td>2個</td><td class="price">3,760円</td></tr>
+      <tr><td>3個</td><td class="price">5,340円</td></tr>
+    </table>
+  </div>
+
+
+
+  <div class="cd">
+    <div class="ch"><span>🚿 高圧洗浄（ベランダ）</span></div>
+    <table class="opt-table">
+      <tr><th>数量（面積）</th><th>お客様支払い</th></tr>
+      <tr><td>1（5㎡）</td><td class="price">3,300円</td></tr>
+      <tr><td>2（6㎡）</td><td class="price">3,960円</td></tr>
+      <tr><td>3（7㎡）</td><td class="price">4,620円</td></tr>
+      <tr><td>4（8㎡）</td><td class="price">5,280円</td></tr>
+      <tr><td>5（9㎡）</td><td class="price">5,940円</td></tr>
+      <tr><td>6（10㎡）</td><td class="price">6,599円</td></tr>
+    </table>
+  </div>
+
+  <div class="cd">
+    <div class="ch"><span>⏱️ 10分サポート +α（家事代行）</span></div>
+    <table class="opt-table">
+      <tr><th>数量</th><th>お客様支払い</th><th>作業料金</th></tr>
+      <tr><td>1</td><td class="price">575円</td><td class="price">500円</td></tr>
+      <tr><td>2</td><td class="price">2,300円</td><td class="price">2,000円</td></tr>
+      <tr><td>3</td><td class="price">4,025円</td><td class="price">3,500円</td></tr>
+    </table>
+  </div>
+
+  <div class="cd">
+    <div class="ch warn"><span>🛁 風呂釜クリーニング ⚠️ 神奈川県内のみ</span></div>
+    <table class="opt-table">
+      <tr><th>数量</th><th>お客様支払い</th></tr>
+      <tr><td>1</td><td class="price">20,700円</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ========== ミツモア ========== -->
+<div id="page-mitsumoa" class="page">
+  <div class="ph">
+    <button class="bk" onclick="go('page-anken')"><i class="ti ti-arrow-left"></i></button>
+    <div><h2>ミツモア</h2><p>支払い・処理方法</p></div>
+  </div>
+
+  <div class="sl">支払い方法</div>
+  <div class="cd">
+    <div class="ch navy"><span>💳 基本料金のお支払い</span></div>
+    <table>
+      <tr><td>💳 サイト内（クレジットカード）</td></tr>
+      <tr><td>📆 サイト内（後払い）</td></tr>
+      <tr><td>💴 現金（PayPay・自社クレカ OK）</td></tr>
+    </table>
+  </div>
+
+  <div class="cd">
+    <div class="ch navy"><span>➕ 追加料金</span></div>
+    <table>
+      <tr><th>決済方法</th><th>処理</th></tr>
+      <tr><td>クレジットカード</td><td>増額決済</td></tr>
+      <tr><td>後払い</td><td>増額決済</td></tr>
+    </table>
+  </div>
+
+  <div class="cd">
+    <div class="ch warn"><span>🚗 駐車代</span></div>
+    <div style="padding:.8rem 1rem">
+      <p style="font-size:12px;color:#374151;line-height:1.7"><strong>現金で回収</strong>してください。<br>くらしのマーケットのように作業料金に含む必要はありません。間違えないように注意してください。</p>
+    </div>
+  </div>
+
+  <div class="sl">領収書が必要なお客様へ</div>
+  <div class="cd">
+    <div style="padding:.8rem 1rem">
+      <p style="font-size:12px;color:#374151;line-height:1.7;margin-bottom:.6rem">お客様にフォームを入力してもらい、<strong>その場で受信を確認</strong>してください。<br><span style="color:#dc2626;font-weight:700">後日再発行はできません。</span></p>
+    </div>
+    <a class="ext-btn secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSeUU600q1xPXjamUUc3h0of_kwwysL_ygxaBUFR4t0KGp8DeA/viewform" target="_blank" style="margin:0 1rem .8rem">
+      <i class="ti ti-file-text"></i> 領収書発行フォームを開く
+    </a>
+  </div>
+
+  <div class="sl">マイページ</div>
+  <div class="cd">
+    <div class="li" onclick="openLink('https://meetsmore.com/service_providers/sign_in')">
+      <div class="lil"><div class="icon bg-teal">💼</div><div><div class="ititle">ミツモア マイページ</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </div>
+  </div>
+</div>
+
+<!-- ========== おうちにプロ ========== -->
+<div id="page-ouchini" class="page">
+  <div class="ph">
+    <button class="bk" onclick="go('page-anken')"><i class="ti ti-arrow-left"></i></button>
+    <div><h2>おうちにプロ</h2><p>現地現金回収のみ</p></div>
+  </div>
+
+  <div style="margin:1rem 1rem 0">
+    <div class="danger">
+      <h3>🚨 必ず現地で回収してください</h3>
+      <p>おうちにプロはサイト決済がありません。現地回収を忘れると<strong>未収金</strong>になります。作業完了後、必ずお支払いをいただいてください。</p>
+    </div>
+  </div>
+
+  <div class="sl">支払い方法</div>
+  <div class="cd">
+    <div class="ch navy"><span>💳 支払いフロー</span></div>
+    <div style="padding:.8rem 1rem">
+      <p style="font-size:13px;font-weight:700;color:#374151;margin-bottom:.4rem">現金・自社クレカ・自社PayPay なんでもOK！</p>
+      <p style="font-size:12px;color:#9ca3af">決済方法の変更もOKです。自社ホームページ案件と同じです。</p>
+    </div>
+  </div>
+
+  <div class="sl">領収書が必要なお客様へ</div>
+  <div class="cd">
+    <div style="padding:.8rem 1rem">
+      <p style="font-size:12px;color:#374151;line-height:1.7;margin-bottom:.6rem">お客様にフォームを入力してもらい、<strong>その場で受信を確認</strong>してください。<br><span style="color:#dc2626;font-weight:700">後日再発行はできません。</span></p>
+    </div>
+    <a class="ext-btn secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSeUU600q1xPXjamUUc3h0of_kwwysL_ygxaBUFR4t0KGp8DeA/viewform" target="_blank" style="margin:0 1rem .8rem">
+      <i class="ti ti-file-text"></i> 領収書発行フォームを開く
+    </a>
+  </div>
+</div>
+
+<!-- ========== エアピカ ========== -->
+<div id="page-airpika" class="page">
+  <div class="ph">
+    <button class="bk" onclick="go('page-anken')"><i class="ti ti-arrow-left"></i></button>
+    <div><h2>エアピカ</h2><p>支払い・処理方法</p></div>
+  </div>
+
+  <div class="sl">支払い方法</div>
+  <div class="cd">
+    <div class="ch navy"><span>💳 支払いフロー</span></div>
+    <table>
+      <tr><th>区分</th><th>方法</th></tr>
+      <tr><td>基本料金</td><td>サイト決済</td></tr>
+      <tr><td>追加料金・オプション</td><td>サイト内で新規注文</td></tr>
+      <tr><td>駐車代</td><td>現金回収</td></tr>
+    </table>
+    <div style="padding:.6rem 1rem">
+      <p style="font-size:11px;color:#9ca3af">追加料金は増額決済ではなくオプションとして新規注文していただく形になります</p>
+    </div>
+  </div>
+
+  <div class="sl">領収書が必要なお客様へ</div>
+  <div class="cd">
+    <div style="padding:.8rem 1rem">
+      <p style="font-size:12px;color:#374151;line-height:1.7;margin-bottom:.6rem">お客様にフォームを入力してもらい、<strong>その場で受信を確認</strong>してください。<br><span style="color:#dc2626;font-weight:700">後日再発行はできません。</span></p>
+    </div>
+    <a class="ext-btn secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSeUU600q1xPXjamUUc3h0of_kwwysL_ygxaBUFR4t0KGp8DeA/viewform" target="_blank" style="margin:0 1rem .8rem">
+      <i class="ti ti-file-text"></i> 領収書発行フォームを開く
+    </a>
+  </div>
+</div>
+
+<!-- ========== 自社案件 ========== -->
+<div id="page-jisha" class="page">
+  <div class="ph">
+    <button class="bk" onclick="go('page-anken')"><i class="ti ti-arrow-left"></i></button>
+    <div><h2>自社案件</h2><p>インスタ・LP・HP・電話・ジモティ</p></div>
+  </div>
+
+  <div class="sl">支払い方法</div>
+  <div class="cd">
+    <div class="ch navy"><span>💳 支払いフロー</span></div>
+    <div style="padding:.8rem 1rem">
+      <p style="font-size:13px;font-weight:700;color:#374151;margin-bottom:.4rem">現金・自社クレカ・自社PayPay なんでもOK！</p>
+      <p style="font-size:12px;color:#9ca3af">決済方法の変更もOKです。</p>
+    </div>
+  </div>
+
+  <div class="sl">料金について</div>
+  <div class="cd">
+    <div style="padding:.8rem 1rem">
+      <p style="font-size:12px;color:#374151;line-height:1.7">料金は<strong>見積もりを参考</strong>にしてください。<br>HP案件のみ料金計算ツールで計算可能です。</p>
+    </div>
+    <a class="ext-btn green" href="https://plusalpha7830-sudo.github.io/ac-calculator-plus-alpha/" target="_blank" style="margin:0 1rem .8rem">
+      <i class="ti ti-calculator"></i> 料金計算ツール（HP案件用）
+    </a>
+  </div>
+
+  <div class="sl">領収書が必要なお客様へ</div>
+  <div class="cd">
+    <div style="padding:.8rem 1rem">
+      <p style="font-size:12px;color:#374151;line-height:1.7;margin-bottom:.6rem">お客様にフォームを入力してもらい、<strong>その場で受信を確認</strong>してください。<br><span style="color:#dc2626;font-weight:700">後日再発行はできません。</span></p>
+    </div>
+    <a class="ext-btn secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSeUU600q1xPXjamUUc3h0of_kwwysL_ygxaBUFR4t0KGp8DeA/viewform" target="_blank" style="margin:0 1rem .8rem">
+      <i class="ti ti-file-text"></i> 領収書発行フォームを開く
+    </a>
+  </div>
+</div>
+
+<!-- ========== ありがとう案件 HP ========== -->
+<div id="page-arigato-hp" class="page">
+  <div class="ph">
+    <button class="bk" onclick="go('page-anken')"><i class="ti ti-arrow-left"></i></button>
+    <div><h2>ありがとう案件 HP</h2><p>支払い・口コミ・登録依頼</p></div>
+  </div>
+
+  <div class="sl">支払い方法</div>
+  <div class="cd">
+    <div class="ch navy"><span>💳 支払いフロー</span></div>
+    <table>
+      <tr><th>支払い方法</th><th>タイミング</th><th>追加があった場合</th><th>駐車料金</th></tr>
+      <tr><td>現金</td><td rowspan="2" style="text-align:center">当日</td><td>現金</td><td rowspan="3" style="text-align:center;font-size:11px">当日現金精算</td></tr>
+      <tr><td>PayPay</td><td><a onclick="openLink('https://drive.google.com/uc?export=view&id=15Jf9aHM7LYh6jvCRrbrxHWQlUuLZpBK-')" style="color:#be185d;cursor:pointer;font-weight:700">PayPay QRを表示</a></td></tr>
+      <tr><td>クレジット<br>カード</td><td style="text-align:center">事前決済</td><td>クレカ※</td></tr>
+    </table>
+    <div style="padding:.8rem 1rem;background:#fff7ed;border-top:1.5px solid #fed7aa">
+      <p style="font-size:12px;color:#92400e;line-height:1.7">※クレジットカード決済で当日追加があった場合は<br><strong>@田中京子 さんにメンションして『クレカ払い』＋『追加分の金額』を報告</strong>してお客さまにクレカ請求してもらう</p>
+    </div>
+  </div>
+
+  <div class="cd" style="margin-top:.8rem">
+    <div style="padding:.8rem 1rem">
+      <p style="font-size:12px;color:#374151;line-height:1.9">
+        ✅ 確定依頼不要<br>
+        ✅ メニューの追加・変更があった場合、ビフォアフルームに追加・変更内容のメッセージを送る（メンション不要）<br>
+        ✅ 当日支払い方法変更可
+      </p>
+    </div>
+  </div>
+
+  <div class="sl">金額確認</div>
+  <div class="cd">
+    <a class="li" href="https://docs.google.com/spreadsheets/d/1ov9lW5xAQmoRHQ1prPD5fHdwQCC-MNdGVoiNdzAm2Tg/edit" target="_blank">
+      <div class="lil"><div class="icon bg-green">📊</div><div><div class="ititle">ありがとう金額表（スプレッドシート）</div><div class="isub">タップして金額表に飛ぶ</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </a>
+  </div>
+
+  <div class="sl">領収書発行</div>
+  <div class="cd">
+    <div style="padding:.8rem 1rem">
+      <p style="font-size:12px;color:#374151">領収書発行は <strong>@田中京子 さんに依頼する</strong></p>
+    </div>
+  </div>
+
+  <div class="sl">保証対象外同意書 <span style="font-size:11px;font-weight:400;color:#9ca3af">※10年以上が対象</span></div>
+  <div class="cd">
+    <a class="li" href="https://drive.google.com/file/d/1MelWa-Vyzn7oFVDmsHh6l2VgW2Mp5zk2/view" target="_blank">
+      <div class="lil"><div class="icon bg-rose">📋</div><div><div class="ititle">入力フォームを開く</div><div class="isub">お客さまにスマホを渡して入力してもらう</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </a>
+  </div>
+
+  <div class="sl">口コミ・登録依頼</div>
+  <div class="cd">
+    <div class="li" onclick="openLink('https://drive.google.com/uc?export=view&id=1iOZTxMIEed5ND2RwxXXTMF8a_VcfKX-P')">
+      <div class="lil"><div class="icon bg-teal">✅</div><div><div class="ititle">品質チェックシート QRを表示</div></div></div>
+      <i class="ti ti-qrcode iarrow"></i>
+    </div>
+    <div class="li" href="https://drive.google.com/file/d/1iOZTxMIEed5ND2RwxXXTMF8a_VcfKX-P/view" target="_blank" onclick="openLink('https://drive.google.com/file/d/1iOZTxMIEed5ND2RwxXXTMF8a_VcfKX-P/view')">
+      <div class="lil"><div class="icon bg-teal">📄</div><div><div class="ititle">品質チェックシートに飛ぶ</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </div>
+    <div class="li" onclick="openLink('https://drive.google.com/uc?export=view&id=123uhtUDE96lXAMQZ8VZ2hzhNJOorww4v')">
+      <div class="lil"><div class="icon bg-amber">⭐</div><div><div class="ititle">Google口コミ QRを表示</div></div></div>
+      <i class="ti ti-qrcode iarrow"></i>
+    </div>
+    <div class="li" onclick="openLink('https://drive.google.com/uc?export=view&id=1-QHxsT866GD5GYilDTpteyWTdNglvwbC')">
+      <div class="lil"><div class="icon bg-green">💚</div><div><div class="ititle">公式LINE登録 QRを表示</div></div></div>
+      <i class="ti ti-qrcode iarrow"></i>
+    </div>
+    <div class="li" onclick="openLink('https://drive.google.com/uc?export=view&id=1ybP1r-S8v37omh32F0By5ks7oTIiG87h')">
+      <div class="lil"><div class="icon bg-purple">📧</div><div><div class="ititle">メルマガ登録 QRを表示</div></div></div>
+      <i class="ti ti-qrcode iarrow"></i>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ありがとう案件 ユアマ ========== -->
+<div id="page-arigato-youma" class="page">
+  <div class="ph">
+    <button class="bk" onclick="go('page-anken')"><i class="ti ti-arrow-left"></i></button>
+    <div><h2>ありがとう案件 ユアマ</h2><p>支払い・口コミ・登録依頼</p></div>
+  </div>
+
+  <div class="sl">支払い方法</div>
+  <div class="cd">
+    <div class="ch navy"><span>💳 支払いフロー</span></div>
+    <table>
+      <tr><th>支払い方法</th><th>駐車料金</th><th>備考</th></tr>
+      <tr><td style="font-weight:700">サイト内決済のみ</td><td>当日現金精算</td><td style="color:#dc2626;font-weight:700;font-size:11px">現金のやり取りは駐車料金以外厳禁！</td></tr>
+    </table>
+    <div style="padding:.8rem 1rem">
+      <p style="font-size:12px;color:#374151;line-height:1.9">
+        ✅ 確定依頼不要<br>
+        ✅ メニューの追加・変更があった場合、ビフォアフルームに追加・変更内容のメッセージを送る（メンション不要）<br>
+        ✅ 当日支払い方法の変更<strong>不可</strong>
+      </p>
+    </div>
+  </div>
+
+  <div class="sl">金額確認</div>
+  <div class="cd">
+    <a class="li" href="https://docs.google.com/spreadsheets/d/1h_vDPau8eLqfJlAdea2wY1um7ETOAAreQHERi4Kh7k4/edit" target="_blank">
+      <div class="lil"><div class="icon bg-green">📊</div><div><div class="ititle">ありがとうユアマイスター金額表</div><div class="isub">タップしてスプレッドシートに飛ぶ</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </a>
+  </div>
+
+  <div class="sl">領収書の発行を依頼されたら</div>
+  <div class="cd">
+    <div style="padding:.8rem 1rem">
+      <p style="font-size:12px;color:#374151;line-height:1.7">施工完了後にユアマから送られるメールに添付されているのでダウンロードしてと伝える<br><span style="color:#9ca3af;font-size:11px">※領収書の宛名はお申込みの名前になり、後からの変更不可</span></p>
+    </div>
+  </div>
+
+  <div class="sl">保証対象外同意書 <span style="font-size:11px;font-weight:400;color:#9ca3af">※10年以上が対象</span></div>
+  <div class="cd">
+    <a class="li" href="https://drive.google.com/file/d/1MelWa-Vyzn7oFVDmsHh6l2VgW2Mp5zk2/view" target="_blank">
+      <div class="lil"><div class="icon bg-rose">📋</div><div><div class="ititle">入力フォームを開く</div><div class="isub">お客さまにスマホを渡して入力してもらう</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </a>
+  </div>
+
+  <div class="sl">口コミ・登録依頼</div>
+  <div class="cd">
+    <div class="li" onclick="openLink('https://drive.google.com/uc?export=view&id=1iOZTxMIEed5ND2RwxXXTMF8a_VcfKX-P')">
+      <div class="lil"><div class="icon bg-teal">✅</div><div><div class="ititle">品質チェックシート QRを表示</div></div></div>
+      <i class="ti ti-qrcode iarrow"></i>
+    </div>
+    <div class="li" onclick="openLink('https://drive.google.com/file/d/1iOZTxMIEed5ND2RwxXXTMF8a_VcfKX-P/view')">
+      <div class="lil"><div class="icon bg-teal">📄</div><div><div class="ititle">品質チェックシートに飛ぶ</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </div>
+    <div class="li">
+      <div class="lil"><div class="icon bg-blue">⭐</div><div><div class="ititle">ユアマ口コミ</div><div class="isub">ユアマイスターのマイページから依頼</div></div></div>
+    </div>
+    <div class="li" onclick="openLink('https://drive.google.com/uc?export=view&id=123uhtUDE96lXAMQZ8VZ2hzhNJOorww4v')">
+      <div class="lil"><div class="icon bg-amber">⭐</div><div><div class="ititle">Google口コミ QRを表示</div></div></div>
+      <i class="ti ti-qrcode iarrow"></i>
+    </div>
+    <div class="li" onclick="openLink('https://drive.google.com/uc?export=view&id=1-QHxsT866GD5GYilDTpteyWTdNglvwbC')">
+      <div class="lil"><div class="icon bg-green">💚</div><div><div class="ititle">公式LINE登録 QRを表示</div></div></div>
+      <i class="ti ti-qrcode iarrow"></i>
+    </div>
+    <div class="li" onclick="openLink('https://drive.google.com/uc?export=view&id=1ybP1r-S8v37omh32F0By5ks7oTIiG87h')">
+      <div class="lil"><div class="icon bg-purple">📧</div><div><div class="ititle">メルマガ登録 QRを表示</div></div></div>
+      <i class="ti ti-qrcode iarrow"></i>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 機種ごとの対応方法 ========== -->
+<div id="page-kishu" class="page">
+  <div class="ph">
+    <button class="bk" onclick="go('page-top')"><i class="ti ti-arrow-left"></i></button>
+    <div><h2>機種ごとの対応方法</h2><p>トラブル・特殊機種の対応</p></div>
+  </div>
+
+  <div style="margin:1rem 1rem 0">
+    <a class="ng-banner" href="https://drive.google.com/file/d/19oQVt5fJfx6mLXFTzeHzmErQlghcsgGh/view" target="_blank">
+      <div class="ng-left">
+        <div class="ng-icon">🚫</div>
+        <div>
+          <p class="ng-title">対応外機種一覧</p>
+          <p class="ng-sub">作業前に必ず確認してください</p>
+        </div>
+      </div>
+      <i class="ti ti-external-link" style="color:white;font-size:18px"></i>
+    </a>
+  </div>
+
+  <div class="sl">💧 機器トラブル</div>
+  <div class="cd">
+    <a class="li" href="https://drive.google.com/file/d/1_UJDho_nsj40hWqIT8GdiVR5AlG-OeCe/view" target="_blank">
+      <div class="lil"><div class="icon bg-blue">💧</div><div><div class="ititle">高圧洗浄機は動くけど給水されない</div><div class="isub">給水トラブルの対処手順</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </a>
+  </div>
+
+  <div class="sl">🔩 機種特殊対応</div>
+  <div class="cd">
+    <a class="li" href="https://drive.google.com/file/d/1oca9kEmbBuq66brJq2Kb1OPTuagkn-6P/view" target="_blank">
+      <div class="lil"><div class="icon bg-rose">🔩</div><div><div class="ititle">ルーバー取り付け部が特殊な機種</div><div class="isub">特殊ルーバーの対応方法</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </a>
+    <a class="li" href="https://drive.google.com/file/d/15tR_2HJLSce0yZXPs3FcnO-2QYiQcAmK/view" target="_blank">
+      <div class="lil"><div class="icon bg-purple">🆕</div><div><div class="ititle">2025年製 Panasonic 通常タイプ</div><div class="isub">最新機種の対応手順</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </a>
+  </div>
+
+  <div class="sl">⚠️ メーカー別エラー</div>
+  <div class="cd">
+    <a class="li" href="https://drive.google.com/file/d/1yq6dMKJYohjrbA3QNho-_P2hWL5SJJTPR/view" target="_blank">
+      <div class="lil"><div class="icon bg-amber">⚠️</div><div><div class="ititle">TOSHIBA エラー</div><div class="isub">東芝エアコンのエラーコード・対処手順</div></div></div>
+      <i class="ti ti-external-link iarrow"></i>
+    </a>
+  </div>
+</div>
+
+<!-- ========== オプション一覧 ========== -->
+<div id="page-option" class="page">
+  <div class="ph">
+    <button class="bk" onclick="go('page-top')"><i class="ti ti-arrow-left"></i></button>
+    <div><h2>オプション一覧</h2><p>エアコン系以外のアップセル</p></div>
+  </div>
+
+  <div class="sl">🚿 ベランダの高圧洗浄</div>
+  <div class="cd">
+    <div class="ch green"><span>エアコンとセットで割引あり</span></div>
+    <div style="padding:.7rem 1rem;background:#f0fdf4">
+      <p style="font-size:12px;color:#374151;line-height:1.7">内容：ブラシを使わず高圧洗浄機で砂などの汚れを洗い流す</p>
+    </div>
+    <table class="opt-table">
+      <tr><th>面積</th><th>お客様支払い</th></tr>
+      <tr><td>5㎡以内</td><td class="price">3,300円</td></tr>
+      <tr><td>6㎡</td><td class="price">3,960円</td></tr>
+      <tr><td>7㎡</td><td class="price">4,620円</td></tr>
+      <tr><td>8㎡</td><td class="price">5,280円</td></tr>
+      <tr><td>9㎡</td><td class="price">5,940円</td></tr>
+      <tr><td>10㎡</td><td class="price">6,599円</td></tr>
+    </table>
+    <div style="padding:.6rem 1rem;background:#f0fdf4;border-top:1px solid #bbf7d0">
+      <p style="font-size:11px;color:#166534;font-weight:700">① ベランダの縦横の長さを測り面積を算出する<br>② 5㎡以内で3,300円、超える場合は1㎡につき660円加算</p>
+    </div>
+  </div>
+
+  <div class="sl">🔆 シーリングライト</div>
+  <div class="cd">
+    <div style="padding:.7rem 1rem">
+      <p style="font-size:12px;color:#374151">内容：カバーを外してホコリを水拭き＆乾拭きする<br><span style="color:#be185d;font-size:11px;font-weight:700">※数が多くなるほどお得</span></p>
+    </div>
+    <table class="opt-table">
+      <tr><th>箇所数</th><th>1箇所あたり</th><th>合計</th></tr>
+      <tr><td>1箇所</td><td class="price">1,980円</td><td class="price">1,980円</td></tr>
+      <tr><td>2箇所</td><td class="price">1,880円</td><td class="price">3,760円</td></tr>
+      <tr><td>3箇所</td><td class="price">1,780円</td><td class="price">5,340円</td></tr>
+    </table>
+  </div>
+
+  <div class="sl">💡 電気の傘</div>
+  <div class="cd">
+    <div style="padding:.7rem 1rem">
+      <p style="font-size:12px;color:#374151">内容：照明まわりのホコリや汚れを取り除く<br><span style="color:#be185d;font-size:11px;font-weight:700">※数が多くなるほどお得</span></p>
+    </div>
+    <table class="opt-table">
+      <tr><th>箇所数</th><th>1箇所あたり</th><th>合計</th></tr>
+      <tr><td>1箇所</td><td class="price">980円</td><td class="price">980円</td></tr>
+      <tr><td>2箇所</td><td class="price">880円</td><td class="price">1,760円</td></tr>
+      <tr><td>3箇所</td><td class="price">780円</td><td class="price">2,340円</td></tr>
+    </table>
+  </div>
+
+  <div class="sl">⏱️ ちょこっとサポート +α（10分）</div>
+  <div class="cd">
+    <div style="padding:.7rem 1rem">
+      <p style="font-size:12px;color:#374151;line-height:1.7">内容：お客さまの困っているちょこっとサポート<br>（高い所の荷物・電球交換・ベランダ掃き掃除・家具移動・家電開封など）<br><span style="color:#9ca3af;font-size:11px">くらま案件の場合、トイレ掃除もアリです♪</span></p>
+    </div>
+    <table class="opt-table">
+      <tr><th>媒体</th><th>10分あたり</th></tr>
+      <tr><td>自社・くらま・その他</td><td class="price">500円</td></tr>
+      <tr><td>ユアマイスター</td><td class="price">575円<span style="font-size:10px;color:#9ca3af;font-weight:400">（+15%）</span></td></tr>
+    </table>
+    <div style="padding:.6rem 1rem;background:#fff0f5;border-top:1px solid #fce7f3">
+      <p style="font-size:11px;color:#be185d;font-weight:700">⚠️ 事前に金額をお伝えしてから作業する</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ========== 緊急時対応マニュアル ========== -->
+<div id="page-emergency" class="page">
+  <div class="ph">
+    <button class="bk" onclick="go('page-top')"><i class="ti ti-arrow-left"></i></button>
+    <div><h2>緊急時対応マニュアル</h2><p>地震・事故など作業中トラブル</p></div>
+  </div>
+
+  <div class="sl">🚨 地震発生時</div>
+  <div class="step-card">
+    <div class="step-head"><div class="step-num">1</div><span>まず身の安全を確保する</span></div>
+    <div class="step-body"><p>作業を即停止し、頭部を保護してください。お客様の安全も確認してください。</p></div>
+  </div>
+  <div class="step-card">
+    <div class="step-head"><div class="step-num">2</div><span>水・電気を止める</span></div>
+    <div class="step-body"><p>高圧洗浄機の電源を切り、水を止めてください。可能であれば元栓も閉じてください。</p></div>
+  </div>
+  <div class="step-card">
+    <div class="step-head"><div class="step-num">3</div><span>管理者に連絡</span></div>
+    <div class="step-body"><p>状況を管理者にLINEまたは電話で報告してください。作業を再開するかどうかは管理者の指示に従ってください。</p></div>
+  </div>
+  <div class="step-card">
+    <div class="step-head"><div class="step-num">4</div><span>お客様への説明</span></div>
+    <div class="step-body"><p>作業中断の旨をお客様に丁寧に説明し、再開可能な場合は日程を調整してください。</p></div>
+  </div>
+
+  <div class="sl">🚗 交通事故・車両トラブル</div>
+  <div class="step-card">
+    <div class="step-head"><div class="step-num">1</div><span>安全な場所に停車</span></div>
+    <div class="step-body"><p>ハザードランプを点灯し、安全な場所に停車してください。</p></div>
+  </div>
+  <div class="step-card">
+    <div class="step-head"><div class="step-num">2</div><span>110番・119番</span></div>
+    <div class="step-body"><p>事故の場合は警察（110）と必要に応じて救急（119）に連絡してください。</p></div>
+  </div>
+  <div class="step-card">
+    <div class="step-head"><div class="step-num">3</div><span>管理者・保険会社に連絡</span></div>
+    <div class="step-body"><p>管理者と自動車保険会社に連絡してください。現場の写真を撮っておくと後で役立ちます。</p></div>
+  </div>
+
+  <div class="sl">💧 水漏れ・設備トラブル</div>
+  <div class="step-card">
+    <div class="step-head"><div class="step-num">1</div><span>水を止める</span></div>
+    <div class="step-body"><p>高圧洗浄機を停止し、水道の元栓を閉めてください。</p></div>
+  </div>
+  <div class="step-card">
+    <div class="step-head"><div class="step-num">2</div><span>被害を最小限に</span></div>
+    <div class="step-body"><p>タオル等で水を拭き取り、お客様の家財への被害を最小限に抑えてください。</p></div>
+  </div>
+  <div class="step-card">
+    <div class="step-head"><div class="step-num">3</div><span>管理者に報告・写真撮影</span></div>
+    <div class="step-body"><p>状況を写真で記録し、管理者に報告してください。お客様への謝罪と今後の対応は管理者の指示に従ってください。</p></div>
+  </div>
+
+  <div style="margin:.5rem 1rem 0">
+    <div class="danger">
+      <h3>📞 緊急連絡先</h3>
+      <p>管理者へはLINEまたは電話で連絡してください。</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleAcc(el) {
+  const body = el.nextElementSibling;
+  const arrow = el.querySelector('.acc-arrow');
+  body.classList.toggle('open');
+  arrow.classList.toggle('open');
+}
+
+function go(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const target = document.getElementById(pageId);
+  if (target) {
+    target.classList.add('active');
+    window.scrollTo(0, 0);
+  }
+}
+
+function openLink(url) {
+  window.open(url, '_blank');
+}
+
+function toggleCheck(el) {
+  el.classList.toggle('checked');
+  if (el.classList.contains('checked')) {
+    el.innerHTML = '<i class="ti ti-check" style="color:white;font-size:14px"></i>';
+  } else {
+    el.innerHTML = '';
+  }
+}
+</script>
+</body>
+</html>
